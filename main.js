@@ -1,7 +1,4 @@
 
-// let classes2 = document.querySelectorAll(".title")
-// let titles = classes2.value.trim().split(' ').join('+')
-// let url2 =  `https://animechan.vercel.app/api/quotes/anime?title=${titles}`
 
 const button = document.querySelectorAll(".button")
 
@@ -21,8 +18,18 @@ button.forEach((buttons) => {
             })
             .catch((error) => console.log(error))
         })
-            
-        });
-        
-        
-    })
+        let classes2 = document.querySelectorAll(".title")
+        classes2.forEach((ele2) => {
+            let titles = ele2.value.trim().split(' ').join('+')
+            let url2 =  `https://animechan.vercel.app/api/quotes/anime?title=${titles}`
+            fetch(url2)
+            .then((res2) => res2.json())
+            .then((resJson2) => {
+                resJson2.forEach((element2) => {
+                    console.log(element2)
+                })
+            })
+            .catch
+         })
+         });
+        })

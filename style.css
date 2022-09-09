@@ -1,0 +1,16 @@
+*{
+    box-sizing: border-box;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+header{
+    /* border: 1px solid black; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#links{
+    display: grid;
+    grid-template-columns: 1fr 5fr ;
+    margin-top: 20px;
+    font-size: 15pt;
+}

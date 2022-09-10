@@ -9,21 +9,29 @@ body{
     display: grid;
     grid-template-rows: 1fr 10fr 1fr;
     margin-bottom: 0;
+    margin-top: 0;
 }
 header{
     border: 1px solid black; 
-
+    background-image: linear-gradient(darkviolet, black);
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
-
+h2{
+    color: silver;
+}
 
 #links{
     display: grid;
     grid-template-columns: 1fr 1fr 2fr;
     margin-top: 20px;
     font-size: 15pt;
+}
+
+a{
+    color: silver;
+    text-decoration: none;
 }
 
 .container{
@@ -40,6 +48,7 @@ aside{
     border: 1px solid black;
     display: grid;
     grid-template-rows: repeat(3, 1fr);
+    background-image: linear-gradient(darkviolet, black);
 }
 
 #main-quotes{
@@ -55,16 +64,37 @@ footer{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     text-align: center;
+    background-image: linear-gradient(darkviolet, black);
+
 } 
+
+.hidden{
+    display: none;
+}
+
+.quotes{
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+input:hover{
+    background-color: aliceblue;
+}
 
 
 @media (max-width: 700px ){
     #main-quotes{
         display: none;
     }
-    header{
-        display: grid;
-        grid-template-rows: 1fr 1fr;
+    #links{
+        display: none;
    
+    }
+    footer a{
+        display: none
     }
 }

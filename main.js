@@ -11,6 +11,9 @@ const p6 = document.querySelector(".character3")
 
 const anchor = document.querySelectorAll("a")
 
+const aside = document.querySelector("aside")
+
+const number = Math.floor(Math.random() * 10)
 
 button.forEach((buttons) => {
     buttons.addEventListener("click", (event) => {
@@ -22,32 +25,38 @@ button.forEach((buttons) => {
             fetch(url)
             .then((res) => res.json())
             .then((resJson) => {
-                resJson.forEach((element) => {
-                    const quote = element.quote
-                    const character = element.character
-                    const anime = element.anime
+                
+                    const quote = resJson[number].quote
+                    console.log(quote)
+                    const character = resJson[number].character
+                    const anime = resJson[number].anime
                     
-                   if (button[0].addEventListener("click", () => {})){
-
+                   button[0].addEventListener("click", () => {
                        p1.textContent = `"${quote}"`
-                       p2.textContent = `   -${character}: ${anime}`
-                   }
-                    if(button[1].addEventListener("click", () => {})){
+                       p2.textContent = `-${character}: ${anime}`
+                      
+                    })
+                  
+                    
+                    button[1].addEventListener("click", () => {
                         
                         p3.textContent = `"${quote}"`
-                        p4.textContent =  `   -${character}: ${anime}`
-                    }
-                    if(button[2].addEventListener("click", () => {})){
+                        p4.textContent =  `-${character}: ${anime}`
+                        
+                    })
+                    
+                    button[2].addEventListener("click", () => {
                         p5.textContent = `"${quote}"`
-                         p6.textContent = `   -${character}: ${anime}`   
-
-                    }
-                })
+                        p6.textContent = `-${character}: ${anime}`   
+                        
+                    })
+                    
+                    
+                    
+                
             })
             .catch((err) => console.log(err))
         })
-
-
         let classes2 = document.querySelectorAll(".title")
         classes2.forEach((ele2) => {
             let titles = ele2.value.trim().split(' ').join('+')
@@ -55,16 +64,29 @@ button.forEach((buttons) => {
             fetch(url2)
             .then((res2) => res2.json())
             .then((resJson2) => {
-                resJson2.forEach((element2) => {
+                    const quote = resJson2[number].quote
+                    const character = resJson2[number].character
+                    const anime = resJson2[number].anime    
 
-                    const quote = element2.quote
-                    const character = element2.character
-                    const anime = element2.anime
-
-                    p1.textContent = `"${quote}"`
-                    p2.textContent = `   -${character}: ${anime}`
-                    
-                })
+                    button[0].addEventListener("click", () => {
+                        p1.textContent = `"${quote}"`
+                        p2.textContent = `-${character}: ${anime}`
+                     })
+                   
+                     
+                     button[1].addEventListener("click", () => {
+                         
+                         p3.textContent = `"${quote}"`
+                         p4.textContent =  `-${character}: ${anime}`
+                         
+                     })
+                     
+                     button[2].addEventListener("click", () => {
+                         p5.textContent = `"${quote}"`
+                         p6.textContent = `-${character}: ${anime}`   
+                         
+                     })
+                
             })
             .catch((err2) => console.log(err2))
          })
@@ -77,3 +99,4 @@ button.forEach((buttons) => {
             })
         })
         
+

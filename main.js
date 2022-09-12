@@ -13,6 +13,9 @@ const anchor = document.querySelectorAll("a")
 
 const aside = document.querySelector("aside")
 
+ let classes = document.querySelectorAll(".name")
+ console.log(classes[0])
+
 const number = Math.floor(Math.random() * 10)
 
 button.forEach((buttons) => {
@@ -25,11 +28,10 @@ button.forEach((buttons) => {
             fetch(url)
             .then((res) => res.json())
             .then((resJson) => {
-                
                     const quote = resJson[number].quote
-                    console.log(quote)
                     const character = resJson[number].character
                     const anime = resJson[number].anime
+                    
                     
                    button[0].addEventListener("click", () => {
                        p1.textContent = `"${quote}"`
@@ -51,12 +53,25 @@ button.forEach((buttons) => {
                         
                     })
                     
-                    
-                    
-                
+                    button[3].addEventListener("click", () => {
+                        p5.textContent = `"${quote}"`
+                        p6.textContent = `-${character}: ${anime}`   
+                        
+                    })
+                     button[4].addEventListener("click", () => {
+                        p5.textContent = `"${quote}"`
+                        p6.textContent = `-${character}: ${anime}`   
+                        
+                    })
+                    button[5].addEventListener("click", () => {
+                        p5.textContent = `"${quote}"`
+                        p6.textContent = `-${character}: ${anime}`   
+                        
+                    }) 
             })
             .catch((err) => console.log(err))
         })
+
         let classes2 = document.querySelectorAll(".title")
         classes2.forEach((ele2) => {
             let titles = ele2.value.trim().split(' ').join('+')
@@ -86,13 +101,29 @@ button.forEach((buttons) => {
                          p6.textContent = `-${character}: ${anime}`   
                          
                      })
-                
+
+                     button[3].addEventListener("click", () => {
+                        p5.textContent = `"${quote}"`
+                        p6.textContent = `-${character}: ${anime}`   
+                        
+                    })
+                    button[4].addEventListener("click", () => {
+                        p5.textContent = `"${quote}"`
+                        p6.textContent = `-${character}: ${anime}`   
+                        
+                    })
+                    button[5].addEventListener("click", () => {
+                        p5.textContent = `"${quote}"`
+                        p6.textContent = `-${character}: ${anime}`   
+                        
+                    })
             })
             .catch((err2) => console.log(err2))
          })
          });
         })
 
+        
         anchor.forEach((a) => {
             a.addEventListener("click", () => {
                 a.style.color = "blue"

@@ -1,7 +1,10 @@
-
-
+const anchor = document.querySelectorAll("a")
 const button = document.querySelectorAll(".button")
+
+let classes = document.querySelectorAll(".name")
+let classes2 = document.querySelectorAll(".title")
 const error = document.querySelectorAll(".error")
+
 const p1 = document.querySelector(".quote")
 const p2 = document.querySelector(".character")
 const p3 = document.querySelector(".quote2")
@@ -14,28 +17,20 @@ const p9 = document.querySelector(".quote5")
 const p10 = document.querySelector(".character5")
 const p11 = document.querySelector(".quote6")
 const p12 = document.querySelector(".character6")
-
-const anchor = document.querySelectorAll("a")
-
-const aside = document.querySelector("aside")
-
-//  let classes = document.querySelectorAll(".name")
-// //  console.log(classes[0])
-
 const number = Math.floor(Math.random() * 10)
 
-// const form = document.querySelector("form")
+
 
 button.forEach((buttons) => {
-    buttons.addEventListener("click", (event) => {
-       event.preventDefault()
-       let classes = document.querySelectorAll(".name")
-       classes.forEach((ele) => {
-          let names = ele.value.trim().split(' ').join('+')
-          let url = `https://animechan.vercel.app/api/quotes/character?name=${names}`
-          fetch(url)
-          .then((res) => res.json())
-          .then((resJson) => {
+   buttons.addEventListener("click", (event) => {
+      event.preventDefault()
+      let classes = document.querySelectorAll(".name")
+      classes.forEach((ele) => {
+         let names = ele.value.trim().split(' ').join('+')
+         let url = `https://animechan.vercel.app/api/quotes/character?name=${names}`
+         fetch(url)
+         .then((res) => res.json())
+         .then((resJson) => {
                     const quote = resJson[number].quote
                     const character = resJson[number].character
                     const anime = resJson[number].anime
@@ -199,6 +194,8 @@ button.forEach((buttons) => {
          })
          })
         })
+
+
 
         
         anchor.forEach((a) => {
